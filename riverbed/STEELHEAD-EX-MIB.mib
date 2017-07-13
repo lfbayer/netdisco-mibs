@@ -849,7 +849,7 @@ blockstoreUncommittedBytes OBJECT-TYPE
     ::= { status 10000 }
 
 lunTable OBJECT-TYPE
-    SYNTAX      SEQUENCE OF lunEntryfmt
+    SYNTAX      SEQUENCE OF LunEntryfmt
     MAX-ACCESS  not-accessible
     STATUS      current
     DESCRIPTION
@@ -857,7 +857,7 @@ lunTable OBJECT-TYPE
     ::= { status 10001 }
 
 lunEntry OBJECT-TYPE
-    SYNTAX      lunEntryfmt
+    SYNTAX      LunEntryfmt
     MAX-ACCESS  not-accessible
     STATUS      current
     DESCRIPTION
@@ -865,7 +865,7 @@ lunEntry OBJECT-TYPE
     INDEX   { lunIndex }
     ::= { lunTable 1 }
 
-lunEntryfmt ::=
+LunEntryfmt ::=
     SEQUENCE {
         lunIndex             Unsigned32
         lunId                OCTET STRING,
