@@ -202,7 +202,7 @@ FILTER-MIB DEFINITIONS ::= BEGIN
                within the log ceasing unauthorized duration. The log ceasing unauthorized
                duration is 1 minute, 5 minutes, and 30 minutes. The default value is
                5 minutes."
-        DEFVAL {duration_5min}
+        DEFVAL {duration-5min}
         ::={swFilterDhcp 3}
         
     swFilterDhcpServerTrapLogState  OBJECT-TYPE

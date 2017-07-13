@@ -1028,7 +1028,7 @@ powerSupplyError NOTIFICATION-TYPE
     ::= { alarmsPrefix 19 }
 
 asymRouteError NOTIFICATION-TYPE
-    OBJECTS { arcount }
+    OBJECTS { asymRouteCount }
     STATUS current
     DESCRIPTION
             "Asymmetric routes have been detected,certain connections might
@@ -1627,8 +1627,8 @@ optimizationServiceStatusClear NOTIFICATION-TYPE
 upgradeFailureClear NOTIFICATION-TYPE
     STATUS current
     DESCRIPTION
-            "Upgrade failure cleared and the system is still running the "
-            "previous image"
+            "Upgrade failure cleared and the system is still running the 
+            previous image"
     ::= { alarmsPrefix 1065 }
 
 clusterDisconnectedSHAlertClear NOTIFICATION-TYPE

@@ -1137,7 +1137,7 @@ hpdot11FilterStatus OBJECT-TYPE
                 ifIndex - Each 802.11 interface is represented by an
                 ifEntry.  Interface tables in this MIB module are indexed
                 by ifIndex."
-            INDEX { dot11WEPDefaultKey11gLength }
+            INDEX { hpdot11WEPDefaultKey11gLength }
             ::= { hpdot11WEPDefaultKeys11gTable 1 }
         
         Hpdot11WEPDefaultKeys11gEntry ::=

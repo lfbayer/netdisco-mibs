@@ -2135,8 +2135,8 @@ ieee8021QBridgeEgressVidXEntry OBJECT-TYPE
         both the relay and local IDs between which the PNP or CNP
         translates."
        
-    INDEX { ieee8021BridgeBaseEgressPortComponentId,
-            ieee8021BridgeEgressBasePort,
+    INDEX { ieee8021BridgeBasePortComponentId,
+            ieee8021BridgeBasePort,
             ieee8021QBridgeEgressVidXRelayVid }
     ::= { ieee8021QBridgeEgressVidXTable 1 }
 

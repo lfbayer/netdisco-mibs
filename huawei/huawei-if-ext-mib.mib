@@ -3411,7 +3411,7 @@ hwAdminVrrpMemberIf OBJECT IDENTIFIER ::= { hwIFExtObjects 9 }
              MAX-ACCESS read-write
              STATUS current
              DESCRIPTION "Whether statistic function is enabled on PVC."
-             DEFVAL      { disable }
+             DEFVAL      { disabled }
              ::= { hwCppsInterfaceEntry 2 }
 
 
@@ -3420,7 +3420,7 @@ hwAdminVrrpMemberIf OBJECT IDENTIFIER ::= { hwIFExtObjects 9 }
              MAX-ACCESS read-write
              STATUS current
              DESCRIPTION "Whether statistic function is enabled on VLAN."
-             DEFVAL      { disable }
+             DEFVAL      { disabled }
              ::= { hwCppsInterfaceEntry 3 }
 
 

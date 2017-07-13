@@ -190,7 +190,7 @@
         STATUS current
         DESCRIPTION 
             " Whether to enable MAC authentication on this interface."
-        DEFVAL { disable }            
+        DEFVAL { disabled }
         ::= { hwMacAuthenCfgEntry 2 } 
     
     hwMacAuthenGuestVlan OBJECT-TYPE

@@ -466,7 +466,7 @@ swMacBasedAuthPortMode OBJECT-TYPE
        port_based: All users connected to a port share the first authentication result.
        host_based: Each user can have its own authentication result.
        "
-       DEFVAL {port_based}
+       DEFVAL {port-based}
    ::= { swMacBasedAuthPortEntry 3 }
 
 swMacBasedAuthPortAgingTime   OBJECT-TYPE

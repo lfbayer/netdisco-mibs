@@ -200,7 +200,7 @@
             DESCRIPTION
                 "Whether the domain of Radius server is included.    
                 "
-            DEFVAL { includingdomain }
+            DEFVAL { includingDomain }
             ::= { hwRadiusGroupEntry 8 }
 
         hwRadiusClassASCar OBJECT-TYPE

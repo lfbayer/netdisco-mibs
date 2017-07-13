@@ -489,7 +489,7 @@ HprRtpEntry ::= SEQUENCE {
      hprRtpCurSendRate       Gauge32,            -- current send rate
 
      hprRtpSmRdTripDelay     Gauge32,            -- smooth rnd trip
-                                                    delay
+                                                 -- delay
 
      hprRtpSendPackets       HprRtpCounter,      -- packets sent
 

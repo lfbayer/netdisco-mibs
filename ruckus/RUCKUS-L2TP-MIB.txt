@@ -59,7 +59,7 @@ ruckusL2TPServiceStatus OBJECT-TYPE
     STATUS current
     DESCRIPTION
         "Enable/disable L2TP service."
-    DEFVAL { true }
+    DEFVAL { enabled }
     ::= { ruckusL2TPInfo 1 }
 
 

@@ -1841,10 +1841,10 @@ IMPORTS
         ::= { appListMemberTable 1 }
 
     AppListMemberEntry ::= SEQUENCE {
-        AppListMemberIndex         Integer32,
-        AppListMemberGuid          DisplayString,
-        AppListMemberApp           DisplayString,
-        AppListMemberRowStatus     RowStatus
+        appListMemberIndex         Integer32,
+        appListMemberGuid          DisplayString,
+        appListMemberApp           DisplayString,
+        appListMemberRowStatus     RowStatus
         }
 
     appListMemberIndex OBJECT-TYPE 

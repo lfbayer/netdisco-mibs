@@ -1055,7 +1055,7 @@
         STATUS current
         DESCRIPTION
             " Whether to apply CAR on the traffic of specific IP and Mac"
-        DEFVAL { disable }
+        DEFVAL { disabled }
         ::= { hwDhcpSnpCarCfgEntry 11 } 
                   
      hwDhcpSnpCarCir OBJECT-TYPE

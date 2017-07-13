@@ -599,7 +599,7 @@ HH3C-NS-MIB DEFINITIONS ::= BEGIN
         DESCRIPTION
             "Reset all streams.  The default value is disabled,
              and set this value to enabled when resetting."
-        DEFVAL { disable }
+        DEFVAL { disabled }
         ::= { hh3cNSStatusEntry 10 }
 
     hh3cNSResetTime OBJECT-TYPE

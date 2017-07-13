@@ -8643,7 +8643,7 @@ SEQUENCE {
   pm24hrTxLanCarrier 			Integer32,
   pm24hrSwTimeStamp		        Integer32
 }
-m24hrswitchStatIndex OBJECT-TYPE
+pm24hrswitchStatIndex OBJECT-TYPE
 SYNTAX Integer32
 MAX-ACCESS read-only
 STATUS current

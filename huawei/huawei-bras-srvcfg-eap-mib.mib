@@ -367,7 +367,7 @@
             STATUS current
             DESCRIPTION
                 "Whether to enable 802.1x on this interface."
-            DEFVAL { disable }
+            DEFVAL { disabled }
             ::= { hwDot1xPortConfigEntry 2 }       
         
         hwDot1xPortGuestVlan OBJECT-TYPE
@@ -420,7 +420,7 @@
             STATUS current
             DESCRIPTION
                 "Enable periodic reauthentication of the client."
-            DEFVAL { disable }
+            DEFVAL { disabled }
             ::= { hwDot1xPortConfigEntry 7 }
             
         hwDot1xMacByPass OBJECT-TYPE
@@ -429,7 +429,7 @@
             STATUS current
             DESCRIPTION
                 "Enable dot1x-macbypass function."
-            DEFVAL { disable }            
+            DEFVAL { disabled }            
             ::= { hwDot1xPortConfigEntry 8 }  
             
        hwDot1xModemVersion  OBJECT-TYPE

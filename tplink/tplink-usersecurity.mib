@@ -197,7 +197,7 @@ TPLINK-USERSECURITY-MIB DEFINITIONS ::= BEGIN
               STATUS  current
               DESCRIPTION
                       "An entry contains of the IP for user authentication ."
-              INDEX   { userSecurityUserAuthIndex }
+              INDEX   { userSecurityUserAuthIpIndex }
               ::= { userSecurityUserAuthIpTable 1 }
           
           USERSECURITYAUTHIPENTRY ::=

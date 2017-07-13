@@ -2,6 +2,8 @@ TPLINK-NTDP-MIB DEFINITIONS ::= BEGIN
 		IMPORTS
 		  OBJECT-TYPE
 			  	         	FROM SNMPv2-SMI        	
+                  ifIndex
+                      FROM IF-MIB
 			ntdpManage
 							FROM TPLINK-CLUSTER-MIB;
 										

@@ -230,8 +230,7 @@ netscreenChassis MODULE-IDENTITY
         STATUS   current
         DESCRIPTION
            "Information describing one installed module and its status"
-       INDEX { nsSlotId,
-       				 nsSubSlotId }
+       INDEX { nsSlotId }
        ::= { nsSlotTable 1 }
 
     nsSlotId OBJECT-TYPE

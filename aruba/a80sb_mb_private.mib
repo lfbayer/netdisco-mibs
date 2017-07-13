@@ -1220,7 +1220,7 @@ iappContextDataSent NOTIFICATION-TYPE
     ::= { dot11Notifications 17 }
     
 dot1xSupplicantAuthenticated NOTIFICATION-TYPE
-        OBJECTS { dot11AuthenticatorMacAddr }
+        OBJECTS { dot1xAuthenticatorMacAddr }
         STATUS current
         DESCRIPTION
         
@@ -1249,7 +1249,7 @@ dot11AuthenticationSupplicantEntry OBJECT-TYPE
         STATUS      current
         DESCRIPTION "An entry in the table, containing information
                      about configuration of one supplicant."
-        INDEX       { dot11AuthenticationSuppIndex }
+        INDEX       { dot118021xSuppIndex }
         ::= { dot11AuthenticationSupplicantTable 1 }
 
 

@@ -118,7 +118,7 @@ hwMffVlanCfgTable  OBJECT-TYPE
             STATUS current
             DESCRIPTION 
                 "Whether to enable gateway MAC address detection on this vlan. "
-            DEFVAL { disable }    
+            DEFVAL { disabled }    
             ::= { hwMffVlanCfgEntry 3 }
 
         

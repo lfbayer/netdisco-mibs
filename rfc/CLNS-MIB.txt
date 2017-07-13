@@ -724,7 +724,7 @@ ClnpMediaToNetEntry ::=
     SEQUENCE {
         clnpMediaToNetIfIndex
             INTEGER,
-        clnpMediaToNetNetAddress
+        clnpMediaToNetAddress
             ClnpAddress,
         clnpMediaToNetPhysAddress
             PhysAddress,

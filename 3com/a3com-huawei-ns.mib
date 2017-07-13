@@ -599,7 +599,7 @@ A3COM-HUAWEI-NS-MIB DEFINITIONS ::= BEGIN
         DESCRIPTION
             "Reset all streams.  The default value is disabled,
              and set this value to enabled when resetting."
-        DEFVAL { disable }
+        DEFVAL { disabled }
         ::= { h3cNSStatusEntry 10 }
 
     h3cNSResetTime OBJECT-TYPE

@@ -1531,7 +1531,7 @@ BpduIndex ::= TEXTUAL-CONVENTION
                         STATUS current
                         DESCRIPTION
                             "Whether the statistic function is enabled."
-                        DEFVAL{ disable }
+                        DEFVAL{ disabled }
                         ::= { hwQinQGroupCfgEntry 4 }
                         
                         
@@ -1599,7 +1599,7 @@ BpduIndex ::= TEXTUAL-CONVENTION
                         STATUS current
                         DESCRIPTION
                             "The user mode attribute of the QinQ-termination sub interface."
-                        DEFVAL{ disable }
+                        DEFVAL{ disabled }
                         ::= { hwQinQAsymmetryCfgEntry 3 }                        
                         
                   hwQinQRemarkCfgTable  OBJECT-TYPE
@@ -2095,7 +2095,7 @@ BpduIndex ::= TEXTUAL-CONVENTION
             STATUS current
             DESCRIPTION 
                 "QinQ swap flag of the interface, which indicates whether to swap the two vlan tags or not when the interface receives a packet with two 802.1q tags."
-            DEFVAL{ disable }
+            DEFVAL{ disabled }
             ::= { hwQinQSwapCfgEntry 2 }
 
         hwQinQSubIfMapTable OBJECT-TYPE
