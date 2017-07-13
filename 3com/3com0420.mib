@@ -808,8 +808,8 @@ PrConfigPortEntry ::=
         prConPortStpProtocolOper        INTEGER,
 
         prConPortLacp                   INTEGER,
-        prConPortStpAdminPathCost       INTEGER,
-        prConPortCascadeMode            INTEGER
+	    prConPortStpAdminPathCost	    INTEGER,
+	    prConPortCascadeMode			INTEGER
  
     }
 
@@ -913,7 +913,491 @@ prConPortIFM OBJECT-TYPE
 
         receive the packet it is dropped.  Intelligent Flow Management
 
-        should be disabled on ports which are connected to ree Rapid Spanning Tree Protocol,
+        should be disabled on ports which are connected to repeater
+
+        segments.
+
+
+
+        Intelligent flow management only functions when a port is
+
+        operating in half duplex, either as a result of
+
+        auto-negotiation, or by management action."
+
+    ::= { prConfigPortEntry 2 }
+
+
+
+prConPortDiscardOnTx OBJECT-TYPE
+
+    SYNTAX      INTEGER  {
+
+                    notApplicable(1),
+
+                    off(2),
+
+                    on(3)
+
+                }
+
+    ACCESS      read-write
+
+    STATUS      mandatory
+
+    DESCRIPTION
+
+        "This object controls whether the 'Discard-on-transmit' feature
+
+        is enabled for frames originating at this port. If set to on(3),
+
+        the unit will discard frames destined for any other port if that
+
+        port's transmit buffers are full.  If this attribute is set to
+
+        off(2), a frame will be held until that port has space available
+
+        for the frame."
+
+    ::= { prConfigPortEntry 3 }
+
+
+
+prConPortPaceMode OBJECT-TYPE
+
+    SYNTAX      INTEGER  {
+
+                    notApplicable(1),
+
+                    useDefault(2),
+
+                    normalEthernet(3),
+
+                    lowLatency(4)
+
+                }
+
+    ACCESS      read-write
+
+    STATUS      mandatory
+
+    DESCRIPTION
+
+        "This object specifies the type of backoff algorithm used on the
+
+        port.  A port can use the standard ethernet algorithm or, for
+
+        PACE applications, it can be set to low latency mode.  In this
+
+        mode, the backoff algorithm is optimised to minimise the
+
+        possibility of collisions.
+
+
+
+        PACE mode can be set for the whole stack or for individual
+
+        ports.  When a unit is initialised to factory defaults this
+
+        object is set to useDefault(2) for every port, and the actual
+
+        setting for the port is decided by the value of
+
+        prConStackPaceMode.  The manager has the choice, therefore, of
+
+        varying the mode for every port in the stack, or for individual
+
+        ports only."
+
+    ::= { prConfigPortEntry 4 }
+
+
+
+prConPortStpFastStart OBJECT-TYPE
+
+    SYNTAX      INTEGER  {
+
+                    off(1),
+
+                    on(2)
+
+                }
+
+    ACCESS      read-write
+
+    STATUS      mandatory
+
+    DESCRIPTION
+
+        "This object specifies whether a switch port will go to the
+
+        forwarding state immediately if spanning tree is turned on.
+
+        When this object is set to on(2), the normal intermediate
+
+        startup states of listening and learning are skipped and the
+
+        port is allowed to enter the forwarding spanning tree state
+
+        immediately.  This is to allow switch ports that are directly
+
+        connected to just one endstation to be immediately available
+
+        when the link is detected or the switch powers up.
+
+
+
+        Note that this object must be set of off(1) for all switch ports
+
+        that are connected to ethernet segments or other switches,
+
+        routers or bridges.
+
+
+
+        The current operational value of Fast Start is given by
+
+        prConPortFastStartOper.
+
+
+
+        The default state for all ports is off(1)."
+
+    ::= { prConfigPortEntry 5 }
+
+
+
+prConPortFlowCntlStatus OBJECT-TYPE
+
+    SYNTAX      INTEGER  {
+
+                    enabled(1),
+
+                    disabled(2),
+
+                    notApplicable(3)
+
+                }
+
+    ACCESS      read-only
+
+    STATUS      mandatory
+
+    DESCRIPTION
+
+        "This object represents the operational full duplex flow control
+
+        state of the port, as determined by either (1) the result of
+
+        auto-negotiation, or (2) if auto-negotiation is not enabled for
+
+        this port, by the value of the object
+
+        prConPortFlowCntlDefaultStatus.  In the latter case a set to
+
+        prConPortFlowCntlDefaultStatus will force the port into the new
+
+        operating mode.
+
+
+
+        If the port is operating in half duplex, the value of this
+
+        object is notApplicable(3).
+
+
+
+        If the port has been set by another MIB to operate flow control
+
+        in one direction only, then the value of this object shall be
+
+        enabled(1)."
+
+    ::= { prConfigPortEntry 6 }
+
+
+
+prConPortFlowCntlDefaultStatus OBJECT-TYPE
+
+    SYNTAX      INTEGER  {
+
+                    enabled(1),
+
+                    disabled(2)
+
+                }
+
+    ACCESS      read-write
+
+    STATUS      mandatory
+
+    DESCRIPTION
+
+        "This object represents the administratively-configured full
+
+        duplex flow control status of the port. If auto-negotiation is
+
+        not enabled for this port, the value of this object determines
+
+        the operational full duplex flow control status, and in this
+
+        case a set to this object will force the port into the specified
+
+        state.
+
+
+
+        If auto-negotiation is enabled for this port, the operational
+
+        status of the port is determined by auto-negotiation and
+
+        indicated by the value of the prConPortFlowCntlStatus object.
+
+
+
+        The value of this object denotes the state to which the port
+
+        will automatically revert should auto-negotiation be disabled.
+
+
+
+        It is possible that the default may be set to operate flow
+
+        control in one direction only by another MIB.  This object would
+
+        return enabled(1) in such a case.  Setting this object to
+
+        enabled(1) would return the default to operate flow control in
+
+        both directions.
+
+
+
+        The value of this object is ignored if the port is operating in
+
+        half duplex mode."
+
+    ::= { prConfigPortEntry 7 }
+
+
+
+prConPortBroadcastFilter OBJECT-TYPE
+
+    SYNTAX      INTEGER  {
+
+                    off(1),
+
+                    filterBroadcasts(2)
+
+                }
+
+    ACCESS      read-write
+
+    STATUS      mandatory
+
+    DESCRIPTION
+
+        "This object is intended for internal use within the device - it
+
+        should not be altered by external management agents.  This
+
+        object is used to enable broadcast storm filtering.  If the
+
+        object is set to filterBroadcasts then all incoming frames which
+
+        contain the broadcast MAC address in the destination address
+
+        field are filtered - they are not forwarded to any other ports.
+
+
+
+        This object will normally be used by an RMON alarm in order to
+
+        implement the Broadcast Storm Control feature of the port.  The
+
+        alarm checks the level of broadcast frames on the port.  If it
+
+        rises above a set threshold, this object is set by the alarm to
+
+        filterBroadcasts. When the level returns to a more acceptable
+
+        level, the object is returned to off."
+
+    ::= { prConfigPortEntry 8 }
+
+
+
+prConPortStpMigrationCheck OBJECT-TYPE
+
+    SYNTAX      INTEGER  {
+
+                    true(1),
+
+                    false(2)
+
+                }
+
+    ACCESS      read-write
+
+    STATUS      mandatory
+
+    DESCRIPTION
+
+        "When this is set to true(1), the Spanning Tree feature will
+
+        check to see if it can operate in RSTP mode on this port.
+
+        Setting this object to false(2) has no effect.
+
+        This object always returns false(2) when read."
+
+    ::= { prConfigPortEntry 9 }
+
+
+
+prConPortStpFastStartOper OBJECT-TYPE
+
+    SYNTAX      INTEGER  {
+
+                    off(1),
+
+                    on(2)
+
+                }
+
+    ACCESS      read-only
+
+    STATUS      mandatory
+
+    DESCRIPTION
+
+        "The current operational value of the Fast Start status of the
+
+        port.  This generally reflects the administrative value, in
+
+        prConPortStpFastStart.  Once another Bridge has been detected on
+
+        the port, this value will be set to off(1), until the port is
+
+        reset."
+
+    ::= { prConfigPortEntry 10 }
+
+
+
+prConPortAdminPointToPointMAC OBJECT-TYPE
+
+    SYNTAX      INTEGER  {
+
+                    forceTrue(1),
+
+                    auto(2),
+
+                    forceFalse(3)
+
+                }
+
+    ACCESS      read-write
+
+    STATUS      mandatory
+
+    DESCRIPTION
+
+        "The administratively assigned value of the point-to-point link
+
+        state of the port.  The values are interpreted as follows:
+
+            forceTrue(1)        this port should always be considered to
+
+                                be using a point-to-point link.
+
+            auto(2)             this port should be considered to be a
+
+                                point-to-point link if either the port
+
+                                represents a Link Aggregate, or if the
+
+                                port has auto-negotiated to operate in
+
+                                full duplex mode.
+
+            forceFalse(3)       this port should always be considered to
+
+                                be using a shared media link."
+
+    ::= { prConfigPortEntry 11 }
+
+
+
+prConPortOperPointToPointMAC OBJECT-TYPE
+
+    SYNTAX      INTEGER  {
+
+                    true(1),
+
+                    false(2)
+
+                }
+
+    ACCESS      read-only
+
+    STATUS      mandatory
+
+    DESCRIPTION
+
+        "The current operational value of the point-to-point link status
+
+        of the port.  The status is indicated as follows:
+
+            true(1)             the administrative state has been set to
+
+                                forceTrue(1), or the port represents a
+
+                                Link Aggregate, or the port has
+
+                                auto-negotiated to operate in full
+
+                                duplex mode.
+
+            false(2)            the administrative state has been set to
+
+                                forceFalse(3), or the port is not a Link
+
+                                Aggregate and has not auto-negotiated to
+
+                                operate in full duplex mode and hence it
+
+                                may be using a shared media link."
+
+    ::= { prConfigPortEntry 12 }
+
+
+
+prConPortStpProtocolOper OBJECT-TYPE
+
+    SYNTAX      INTEGER {
+
+                    stpVersion0(0),
+
+                    rstpVersion2(2)
+
+                }
+
+    ACCESS      read-only
+
+    STATUS      mandatory
+
+    DESCRIPTION
+
+        "The version of the Spanning Tree Protocol that is currently
+
+        being used on this port.
+
+            stpVersion0(0)      The original version of Spanning Tree,
+
+                                defined by IEEE Std. 802.1D-1998.
+
+            stpVersion2(2)      The Rapid Spanning Tree Protocol,
 
                                 defined by IEEE Std. 802.1w."
 
@@ -1093,6 +1577,8 @@ prConPortFdbId OBJECT-TYPE
 
     ::= { prConPortFdbEntry 2 }
 
+
+
 prConPortFdbAddress OBJECT-TYPE
 
     SYNTAX      MacAddress
@@ -1178,6 +1664,7 @@ prConTrunkMulticastTable OBJECT-TYPE
         stack."
 
     ::= { switchConfigGroup 3 }
+
 
 
 prConTrunkMulticastEntry OBJECT-TYPE
@@ -1391,6 +1878,7 @@ prConTrunkMulticastRobp OBJECT-TYPE
 --    each port.
 
 -- ------------------------------------------------------------------ --
+
 
 
 prConIfIndexTable OBJECT-TYPE
@@ -1624,4 +2112,5 @@ prConfigAggStatus OBJECT-TYPE
 
 
 END
+
 
