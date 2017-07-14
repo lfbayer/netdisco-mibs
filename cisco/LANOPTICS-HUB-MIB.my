@@ -108,7 +108,7 @@ snSlotsEntry  OBJECT-TYPE
     DESCRIPTION
     "A slot entry containing a high and low 
      level description of the module in the slot."
-    INDEX                 { INTEGER }
+--    INDEX                 { INTEGER }
     ::=   { snSlotsTable 1 }
 
 SnSlotsEntry ::= SEQUENCE {
@@ -258,7 +258,7 @@ snHubSplitEntry  OBJECT-TYPE
     SYNTAX                SnHubSplitEntry
     ACCESS                not-accessible
     STATUS                mandatory
-    INDEX                 { INTEGER }
+--    INDEX                 { INTEGER }
     ::=   { snHubSplitTable 1 }
 
 SnHubSplitEntry ::= SEQUENCE {
@@ -290,7 +290,7 @@ snHubPSEntry  OBJECT-TYPE
      SYNTAX                SnHubPSEntry
      ACCESS                not-accessible
      STATUS                mandatory
-     INDEX                 { INTEGER }
+--     INDEX                 { INTEGER }
      ::=   { snHubPSTable 1 }
 
 SnHubPSEntry ::= SEQUENCE {
@@ -324,7 +324,7 @@ snHubFanEntry  OBJECT-TYPE
     SYNTAX                SnHubFanEntry
     ACCESS                not-accessible
     STATUS                mandatory
-    INDEX                 { INTEGER }
+--    INDEX                 { INTEGER }
     ::=   { snHubFanTable 1 }
 
 SnHubFanEntry ::= SEQUENCE {
@@ -356,7 +356,7 @@ snHubSlotsEntry  OBJECT-TYPE
     SYNTAX                SnHubSlotsEntry
     ACCESS                not-accessible
     STATUS                mandatory
-    INDEX                 { INTEGER }
+--    INDEX                 { INTEGER }
     ::=   { snHubSlotsTable 1 }
 
 SnHubSlotsEntry ::= SEQUENCE {
@@ -452,7 +452,7 @@ snGenPortsEntry  OBJECT-TYPE
     DESCRIPTION
     "An I/O port entry. Each byte of the I/O address is represented
      by one index digit; e.g, instance 255.12 is I/O address (port) 0xFF0C."
-    INDEX                 { INTEGER, INTEGER }
+--    INDEX                 { INTEGER, INTEGER }
     ::=   { snGenPortsTable 1 }
 
 SnGenPortsEntry ::= SEQUENCE {

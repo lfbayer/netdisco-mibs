@@ -66,7 +66,7 @@
                 FROM Q-BRIDGE-MIB
             OBJECT-GROUP, MODULE-COMPLIANCE, NOTIFICATION-GROUP
                 FROM SNMPv2-CONF
-            Integer32, Unsigned32, Counter32, BITS, OBJECT-TYPE, IpAddress,
+            Integer32, Unsigned32, Counter32, OBJECT-TYPE, IpAddress,
             MODULE-IDENTITY, NOTIFICATION-TYPE
                 FROM SNMPv2-SMI
             MacAddress, TruthValue, RowStatus, TimeInterval, TimeStamp,

@@ -15,7 +15,7 @@ IMPORTS
       FROM VPLS-GENERIC-MIB                               -- [draft-ietf-l2vpn-vpls-mib-00]
    PwOperStatusTC
       FROM PW-TC-STD-MIB                                  -- [draft-ietf-pw3-pw-tc-mib-11]
-   pwIndex, pwName, pwID
+   pwIndex, pwName, pwID, pwObjects
       FROM PW-STD-MIB                                     -- [draft-ietf-pw3-pw-mib-11]
    pwEnetPwInstance
       FROM PW-ENET-STD-MIB                                -- [draft-ietf-pw3-enet-mib-11]
@@ -150,6 +150,15 @@ Layer2StateTC ::= TEXTUAL-CONVENTION
 --
 -- L2 VPN VLL and VLL-Local Endpoint table
 --
+
+  fdryPwServiceType OBJECT-TYPE
+     SYNTAX        FdryPwServiceType
+     MAX-ACCESS    accessible-for-notify
+     STATUS        current
+     DESCRIPTION
+         "A L2VPN service type, used only for notification.
+         "
+     ::= { pwObjects 20 }
 
   fdryVllEndPointTable   OBJECT-TYPE
      SYNTAX        SEQUENCE OF FdryVllEndPointEntry

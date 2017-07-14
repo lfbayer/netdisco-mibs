@@ -65,7 +65,7 @@ IMPORTS
             STATUS                mandatory
             DESCRIPTION
             "An interface entry containing the Ipaddress and net-mask."
-            INDEX {INTEGER }
+--            INDEX {INTEGER }
             ::=   { snSysCMOSIpInterfaceTable 1 }
 
    SnSysCMOSIpInterfaceEntry ::= SEQUENCE {
@@ -158,7 +158,7 @@ IMPORTS
                     SYNTAX  SnSysCMOSHubSlotConfigEntry
                     ACCESS  not-accessible
                     STATUS  mandatory
-                    INDEX {INTEGER }
+--                    INDEX {INTEGER }
                     ::= { snSysCMOSHubSlotConfigTable 1 }
 
    SnSysCMOSHubSlotConfigEntry  ::= SEQUENCE {
@@ -346,7 +346,7 @@ IMPORTS
      STATUS  mandatory
      DESCRIPTION
 	"An entry community info"
-     INDEX { INTEGER }  
+--     INDEX { INTEGER }  
    ::= { snSysCMOSSNMPCommunitiesTable 1 }
 
    SnSysCMOSSNMPCommunitiesEntry ::=   SEQUENCE{
@@ -391,7 +391,7 @@ IMPORTS
      STATUS  mandatory
      DESCRIPTION
 	"An entry of trap IP destinations."
-     INDEX {INTEGER }
+--     INDEX {INTEGER }
    ::= { snSysCMOSSNMPTrapCommunitiesTable 1 }
 
    SnSysCMOSSNMPTrapCommunitiesEntry ::=   SEQUENCE{

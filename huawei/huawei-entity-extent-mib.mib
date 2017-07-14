@@ -19,7 +19,7 @@
                 FROM SNMP-FRAMEWORK-MIB            
             OBJECT-GROUP, MODULE-COMPLIANCE, NOTIFICATION-GROUP            
                 FROM SNMPv2-CONF            
-            Integer32, Unsigned32, Counter64, BITS, OBJECT-TYPE, MODULE-IDENTITY, NOTIFICATION-TYPE            
+            Integer32, Unsigned32, Counter64, OBJECT-TYPE, MODULE-IDENTITY, NOTIFICATION-TYPE            
                 FROM SNMPv2-SMI            
             DateAndTime, DisplayString, RowStatus, TEXTUAL-CONVENTION, AutonomousType            
                 FROM SNMPv2-TC;

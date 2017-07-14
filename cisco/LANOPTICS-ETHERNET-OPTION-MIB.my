@@ -75,7 +75,7 @@ etSlotsEntry  OBJECT-TYPE
 	STATUS  mandatory
 	DESCRIPTION
 	"A slot entry containing low level information of an Ethernet the card in the slot."
-        INDEX   { INTEGER }
+--        INDEX   { INTEGER }
 	::=   { etSlotsTable 1 }
 
 EtSlotsEntry ::= SEQUENCE {

@@ -101,7 +101,7 @@ IMPORTS
 	"An entry containing one event.
 	The index into the table is the event number (32 bits int),
         where each byte represented by an index digit."
-         INDEX { INTEGER , INTEGER , INTEGER , INTEGER }  
+--         INDEX { INTEGER , INTEGER , INTEGER , INTEGER }  
    ::= { rmRingEventTable 1 }
 
    RmRingEventEntry ::=   SEQUENCE{

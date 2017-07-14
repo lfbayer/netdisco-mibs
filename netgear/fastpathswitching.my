@@ -2125,7 +2125,7 @@ agentInfoGroup                             OBJECT IDENTIFIER ::= { fastPathSwitc
         DESCRIPTION
             "When this object is set with a non-empty string, the DHCP Vendor
              Classifier Id Option (60) string is enabled for DHCP Network Client."
-        DEFVAL      { false }
+        DEFVAL      { "" }
         ::= { agentVendorClassOptionConfigGroup 2 }
 
 

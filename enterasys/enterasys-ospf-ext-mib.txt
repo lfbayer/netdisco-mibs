@@ -32,7 +32,7 @@ ENTERASYS-OSPF-EXT-MIB DEFINITIONS ::= BEGIN
 
 IMPORTS
     MODULE-IDENTITY, OBJECT-TYPE, Integer32, Counter32, Gauge32,
-    Unsigned32, IpAddress, BITS
+    Unsigned32, IpAddress
         FROM SNMPv2-SMI
     TEXTUAL-CONVENTION, TruthValue
         FROM SNMPv2-TC

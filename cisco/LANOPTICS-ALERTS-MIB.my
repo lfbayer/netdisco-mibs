@@ -99,7 +99,7 @@ IMPORTS
                     SYNTAX  LanOpticsAlertsRegisterEntry
                     ACCESS  not-accessible
                     STATUS  mandatory
-                    INDEX   { INTEGER ,INTEGER,INTEGER,INTEGER}
+--                    INDEX   { INTEGER ,INTEGER,INTEGER,INTEGER}
                     ::= { lanOpticsAlertsRegisterTable 1 }
 
         LanOpticsAlertsRegisterEntry  ::= SEQUENCE {

@@ -528,7 +528,7 @@ RuckusZDWLANAPEntry ::= SEQUENCE {
   ruckusZDWLANAPFWSize					Unsigned32,
   ruckusZDWLANAPFWAvail					Unsigned32,
   ruckusZDWLANAPMultipleVlanCapability  TruthValue,
-  ruckusZDWLANAPEthStatus				INTEGER,
+--  ruckusZDWLANAPEthStatus				INTEGER,
   ruckusZDWLANAP11bCapable              TruthValue,
   ruckusZDWLANAP11gCapable              TruthValue,
   ruckusZDWLANAPMultiModeAccessStatus   TruthValue,

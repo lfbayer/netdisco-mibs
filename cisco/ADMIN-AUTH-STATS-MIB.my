@@ -103,7 +103,7 @@ AlAdminAuthServStatsEntry  ::= SEQUENCE {
 }
 
 alAdminAuthServIndex OBJECT-TYPE
-   SYNTAX     Integer32 (0..MAX)
+   SYNTAX     Integer32 (0..2147483647)
    MAX-ACCESS not-accessible
    STATUS     current
    DESCRIPTION
